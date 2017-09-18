@@ -1,15 +1,21 @@
 public class MyApp {
   public static void main(String[] args) {
-    int score = 65;
-    if (score > 80) {
-      System.out.println("GREAT!");
-    } else if (score > 60) {
-      System.out.println("Good!");
-    } else {
-      System.out.println("So so.");
-    }
+    String signal = "blue";
+    switch(signal) {
+      case "red":
+        System.out.println("STOP");
+        break;
+      case "blue":
+      case "green":
+        System.out.println("GO");
+        break;
+      case "yellow":
+        System.out.println("ATTENTION");
+        break;
+      default:
+        System.out.println("Wrong signal");
+        break;
 
-    String msg = score > 80 ? "Great!" : "so so.";
-    System.out.println(msg);
+    }
   }
 }
