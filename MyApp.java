@@ -1,26 +1,11 @@
 public class MyApp {
   public static void main(String[] args) {
-    // 演算
-    // + - * / %
-    // ++ --
-    // int i;
-    // i = 10 / 3;
-    // System.out.println(i); // 3
-    // i = 10 % 3;
-    // System.out.println(i); // 1
-    // int x = 5;
-    // x++;
-    // System.out.println(x); // 6
-    // x--;
-    // System.out.println(x); // 5
+    // キャスト
+    // double d = 1532.32;
+    // int i = (int)d;
 
-    // int x = 5;
-    // // x = x + 12;
-    // x += 12;
-    // System.out.println(x);
-
-    String s;
-    s = "hello " + "world";
-    System.out.println(s);
+    int i = 10;
+    double d = (double)i / 4;
+    System.out.println(d);
   }
 }
