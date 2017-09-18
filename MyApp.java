@@ -1,10 +1,10 @@
 public class MyApp {
   public static void main(String[] args) {
-    int i = 0;
+    int i = 1000;
 
-    while(i < 10) {
+    do {
       System.out.println(i);
       i++; // 単項演算子と呼ぶ
-    }
+    } while(i < 10);
   }
 }
