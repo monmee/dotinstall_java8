@@ -1,5 +1,7 @@
 public class MyApp {
   public static void main(String[] args) {
-    System.out.println("Hello, world!");
+    String msg;
+    msg = "Hello world, again!";
+    System.out.println(msg);
   }
 }
