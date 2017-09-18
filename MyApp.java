@@ -1,11 +1,15 @@
 public class MyApp {
   public static void main(String[] args) {
-    // キャスト
-    // double d = 1532.32;
-    // int i = (int)d;
+    int score = 65;
+    if (score > 80) {
+      System.out.println("GREAT!");
+    } else if (score > 60) {
+      System.out.println("Good!");
+    } else {
+      System.out.println("So so.");
+    }
 
-    int i = 10;
-    double d = (double)i / 4;
-    System.out.println(d);
+    String msg = score > 80 ? "Great!" : "so so.";
+    System.out.println(msg);
   }
 }
