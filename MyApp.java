@@ -1,13 +1,17 @@
 public class MyApp {
-  public static String sayHi(String name) {
-    // System.out.println("Hi, " + name);
-    return "Hi, " + name;
+  public static void sayHi(String name) {
+    int x = 10;
+    System.out.println("Hi, " + name);
+  }
+
+  public static void sayHi() {
+    System.out.println("Hi, nobody" );
   }
 
   public static void main(String[] args) {
-    String msg = sayHi("Tom");
-    System.out.println(msg);
-
+    sayHi();
     sayHi("Bob");
+    // System.out.println(name);
+    // System.out.println(x);
   }
 }
