@@ -1,8 +1,19 @@
 class User {
-  String name = "ME!";
+  String name;
+
+  // consructor
+  User(String name) {
+    this.name = name;
+  }
+
+  // overload
+  User() {
+    // this.name = "Me";
+    this("Me"); //Userの引数にMeを入れているのでconstructorが呼び出される．結果，"Hi, Me"が出力される．
+  }
 
   void sayHi() {
-    System.out.println("Hi!");
+    System.out.println("Hi, " + this.name);
   }
 }
 
