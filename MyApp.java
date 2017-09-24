@@ -1,28 +1,32 @@
-class User {
-  private String name;
-  private static int count; // クラス変数
+final class User {
+  protected String name;
+  private static final double VERSION = 1.1; // 定数
 
-  // static イニシャライザ
-  static {
-    User.count = 0;
-    System.out.println("Static initializer: ");
-  }
-
-  // instance イニシャライザ
-  {
-    System.out.println("Instance initializer: ");
-  }
-
-  // constructor 
+  // constructor
   public User(String name) {
     this.name = name;
-    User.count++;
-    System.out.println("Constructor");
+    User.VERSION = 1.2;
   }
 
-  public static void getInfo() { // クラスメソッド
-    System.out.println("# of instances: " + User.count);
+  public final void sayHi() {
+    System.out.println("Hi, " + this.name);
   }
+}
+
+public class AdminUser extends User {
+  public AdminUser(String name) {
+    super(name); // 親クラスのconstructor
+  }
+
+  public void sayHello() {
+    System.out.println("Hello, " + this.name);
+  }
+
+  @Override // アノテーション．メソッド名や引数が間違っているとエラーにしてくれる．
+  public void sayHi() {
+    System.out.println("[admin] Hi, " + this.name);
+  }
+
 }
 
 public class MyApp {
