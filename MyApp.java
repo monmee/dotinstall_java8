@@ -1,30 +1,30 @@
 class User {
-  String name;
+  private String name;
+  private int score;
 
-  // consructor
-  User(String name) {
+  User(String name, int score) {
     this.name = name;
+    this.score = score;
+
   }
 
-  // overload
-  User() {
-    // this.name = "Me";
-    this("Me"); //Userの引数にMeを入れているのでconstructorが呼び出される．結果，"Hi, Me"が出力される．
+  public int getScore() {
+    return this.score;
   }
 
-  void sayHi() {
-    System.out.println("Hi, " + this.name);
+  public void setScore(int score) {
+    if (score > 0) {
+      this.score = score;
+    }
   }
 }
 
 public class MyApp {
   public static void main(String[] args) {
 
-    // class
-    User tom;
-    tom = new User(); // インスタンス
-
-    System.out.println(tom.name);
-    tom.sayHi();
+    User tom = new User("tom", 65); // インスタンス
+    tom.setScore(85);
+    tom.setScore(-22);
+    System.out.println(tom.getScore());
   }
 }
