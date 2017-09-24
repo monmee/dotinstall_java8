@@ -1,28 +1,25 @@
-// interface
+// 列挙型(enum)
 
-interface Printable {
-  // 定数
-  double VERSION = 1.2;
-  // 抽象メソッド
-  void print();
-  // default method
-  public default void getInfo() {
-    System.out.println("I/F version: " + Printable.VERSION);
-  }
-  // static method
-}
-
-class User implements Printable {
-  @Override
-  public void print() {
-    System.out.println("Now printing...");
-  }
+enum Result {
+  SUCCESS, // 0
+  ERROR,   // 1
 }
 
 public class MyApp {
   public static void main(String[] args) {
-    User tom = new User();
-    tom.print();
-    tom.getInfo();
+    Result res;
+
+    res = Result.ERROR;
+
+    switch (res) {
+      case SUCCESS:
+        System.out.println("OK");
+        System.out.println(res.ordinal()); // 0
+        break;
+      case ERROR:
+        System.out.println("NG");
+        System.out.println(res.ordinal()); // 1
+        break;
+    }
   }
 }
