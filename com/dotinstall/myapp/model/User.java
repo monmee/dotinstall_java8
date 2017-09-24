@@ -1,13 +1,13 @@
 package com.dotinstall.myapp.model;
 
-class User {
-  String name;
+public class User {
+  protected String name;
 
-  User(String name) {
+  public User(String name) {
     this.name = name;
   }
 
-  void sayHi() {
+  public void sayHi() {
     System.out.println("Hi, " + this.name);
   }
 }
