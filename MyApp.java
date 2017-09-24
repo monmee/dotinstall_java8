@@ -1,30 +1,23 @@
 class User {
   private String name;
-  private int score;
+  private static int count = 0; // クラス変数
 
-  User(String name, int score) {
+  public User(String name) {
     this.name = name;
-    this.score = score;
-
+    User.count++;
   }
 
-  public int getScore() {
-    return this.score;
-  }
-
-  public void setScore(int score) {
-    if (score > 0) {
-      this.score = score;
-    }
+  public static void getInfo() { // クラスメソッド
+    System.out.println("# of instances: " + User.count);
   }
 }
 
 public class MyApp {
   public static void main(String[] args) {
-
-    User tom = new User("tom", 65); // インスタンス
-    tom.setScore(85);
-    tom.setScore(-22);
-    System.out.println(tom.getScore());
+    User.getInfo(); // 0
+    User tom = new User("tom");
+    User.getInfo(); // 1
+    User bob = new User("bob");
+    User.getInfo(); // 2
   }
 }
